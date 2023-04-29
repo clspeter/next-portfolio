@@ -6,15 +6,15 @@ type Props = {};
 
 const Header = (props: Props) => {
   return (
-    <header className="sticky top-0 p-5 flex flex-row justify-between max-w-7xl mx-auto z-20 xl:items-center">
+    <header className="sticky top-0 p-5 flex flex-row justify-between md:max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
         initial={{
-          x: -500,
+          y: -50,
           opacity: 0,
           scale: 0.5,
         }}
         animate={{
-          x: 0,
+          y: 0,
           opacity: 1,
           scale: 1,
         }}
@@ -50,12 +50,12 @@ const Header = (props: Props) => {
       </motion.div>
       <motion.div
         initial={{
-          x: 500,
+          y: -50,
           opacity: 0,
           scale: 0.5,
         }}
         animate={{
-          x: 0,
+          y: 0,
           opacity: 1,
           scale: 1,
         }}
@@ -70,7 +70,7 @@ const Header = (props: Props) => {
           className="cursor-pointer"
           url="mailto:mustpe@gmail.com"
         />
-        <div className="text-gray-400 text-center hidden sm:block ">
+        <div className="text-gray-400 text-center hidden sm:block">
           GET INTOUCH
         </div>
       </motion.div>

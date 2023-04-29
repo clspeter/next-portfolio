@@ -18,7 +18,7 @@ function Hero({}: Props) {
   return (
     <div className="h-screen flex flex-col -space-y-16 md:space-y-8 items-center justify-center text-center">
       <BackgroundCircles />
-      <div>
+      <div className="relative">
         <Image
           src="/peter.png"
           alt=""
@@ -29,7 +29,7 @@ function Hero({}: Props) {
         <h2 className="text-sm uppercase text-gray-500 md:tracking-[15px] tracking-[5px] mt-4">
           Software Engineer
         </h2>
-        <h1 className="mt-2 md:mt-4">
+        <h1 className="mt-2 md:mt-4 z-10">
           <span>{text}</span>
           <Cursor cursorColor="#F7AB0A" />
         </h1>
