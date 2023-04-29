@@ -62,7 +62,7 @@ const Header = (props: Props) => {
         transition={{
           duration: 1.5,
         }}
-        className="flex flex-row items-center pr-2"
+        className="flex flex-row items-center"
       >
         <SocialIcon
           fgColor="gray"
@@ -70,7 +70,9 @@ const Header = (props: Props) => {
           className="cursor-pointer"
           url="mailto:mustpe@gmail.com"
         />
-        <div className="text-gray-400 ">GET INTOUCH</div>
+        <div className="text-gray-400 text-center hidden sm:block ">
+          GET INTOUCH
+        </div>
       </motion.div>
     </header>
   );
