@@ -1,5 +1,6 @@
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
+import BackgroundCircles from "./BackgroundCircles";
 
 type Props = {};
 
@@ -14,7 +15,8 @@ function Hero({}: Props) {
     deleteSpeed: 50,
   });
   return (
-    <div>
+    <div className="h-screen flex flex-col -space-y-16 md:space-y-8 items-center justify-center">
+      <BackgroundCircles />
       <h1>
         <span>{text}</span>
         <Cursor cursorColor="#F7AB0A" />

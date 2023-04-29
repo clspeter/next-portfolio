@@ -8,14 +8,14 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div>
+    <div className="snap-mandatory snap-y z-0">
       <Head>
         <title>Peter&apos;s Portfolio</title>
       </Head>
 
       <Header />
 
-      <section id="hero">
+      <section id="hero" className="snap-center">
         <Hero />
       </section>
 
