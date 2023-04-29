@@ -12,8 +12,8 @@ function Hero({}: Props) {
       "Guy-who-loves-tea.tsx",
       "CodingIsWhatILoveToDo.tsx",
     ],
+    typeSpeed: 100,
     loop: true,
-    deleteSpeed: 50,
   });
   return (
     <div className="h-screen flex flex-col -space-y-16 md:space-y-8 items-center justify-center text-center">
