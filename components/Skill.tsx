@@ -17,6 +17,7 @@ const Skill = (props: Props) => {
           duration: 1,
         }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         src="js.png"
         className=" h-24 w-24 rounded-full border border-gray-500 object-cover filter transition duration-200 ease-in-out group-hover:grayscale xl:h-32 xl:w-32"
       ></motion.img>
