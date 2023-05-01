@@ -9,9 +9,9 @@ const Header = (props: Props) => {
     <header className="sticky top-0 p-5 flex flex-row justify-between md:max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
         initial={{
-          y: -50,
+          y: -75,
           opacity: 0,
-          scale: 0.5,
+          scale: 1.5,
         }}
         animate={{
           y: 0,
@@ -50,9 +50,9 @@ const Header = (props: Props) => {
       </motion.div>
       <motion.div
         initial={{
-          y: -50,
+          y: -75,
           opacity: 0,
-          scale: 0.5,
+          scale: 1.5,
         }}
         animate={{
           y: 0,
