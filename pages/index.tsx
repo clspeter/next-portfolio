@@ -9,19 +9,19 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="snap-mandatory snap-y z-0">
+    <div className="z-0 h-screen snap-y snap-mandatory overflow-scroll">
       <Head>
         <title>Peter&apos;s Portfolio</title>
       </Head>
 
       <Header />
 
-      <section id="hero" className="snap-center">
+      <section id="hero" className="snap-start">
         <Hero />
       </section>
 
       {/* About  */}
-      <section className="snap-cneter">
+      <section id="about" className="snap-center">
         <About />
       </section>
       {/* Experience  */}
