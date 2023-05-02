@@ -41,7 +41,7 @@ const Projects = (props: Props) => {
         ))}
       </div>
 
-      <div className="absolute left-0 top-[30%] h-[500px] w-full -skew-y-12 bg-[#F7AB0A]/10"></div>
+      <div className="absolute left-0 top-[30%] h-[500px] w-full -skew-y-12 bg-blue-500/10"></div>
     </div>
   );
 };

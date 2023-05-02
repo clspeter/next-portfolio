@@ -5,12 +5,12 @@ type Props = {};
 
 const BackgroundCircles = (props: Props) => {
   return (
-    <div className="relative flex justify-center items-center">
-      <div className="absolute md:border border-4 rounded-full md:h-[500px] md:w-[500px] w-[175px] h-[175px] md:mt-52 mt-30 animate-ping" />
-      <div className="absolute border border-[#333333] rounded-full md:h-[300px] md:w-[300px] w-[200px] h-[200px] md:mt-52 mt-30" />
-      <div className="absolute border border-[#333333] rounded-full md:h-[500px] md:w-[500px] w-[300px] h-[300px] md:mt-52 mt-30" />
-      <div className="absolute border border-orange-500 rounded-full opacity-30 md:h-[650px] md:w-[650px] w-[350px] h-[350px] md:mt-52 mt-30animate-pulse" />
-      <div className="hidden md:block absolute border border-[#333333] rounded-full md:h-[800px] md:w-[800px] mt-52" />
+    <div className="relative flex items-center justify-center">
+      <div className="mt-30 absolute h-[175px] w-[175px] animate-ping rounded-full border-4 md:mt-52 md:h-[500px] md:w-[500px] md:border" />
+      <div className="mt-30 absolute h-[200px] w-[200px] rounded-full border border-[#333333] md:mt-52 md:h-[300px] md:w-[300px]" />
+      <div className="mt-30 absolute h-[300px] w-[300px] rounded-full border border-[#333333] md:mt-52 md:h-[500px] md:w-[500px]" />
+      <div className="mt-30animate-pulse absolute h-[350px] w-[350px] rounded-full border border-[#4299E1] opacity-30 md:mt-52 md:h-[650px] md:w-[650px]" />
+      <div className="absolute mt-52 hidden rounded-full border border-[#333333] md:block md:h-[800px] md:w-[800px]" />
     </div>
   );
 };
