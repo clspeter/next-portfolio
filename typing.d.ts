@@ -23,6 +23,13 @@ export interface Technology extends SanityBody {
     progress: number;
 }
 
+export interface Skill extends SanityBody {
+    _type: "skill";
+    title: string;
+    image: Image;
+    progress: number;
+}
+
 export interface Experience extends SanityBody {
     _type: "experience";
     company: string;
@@ -43,8 +50,6 @@ export interface Project extends SanityBody {
     summary: string;
     technologies: Technology[];
 }
-
-
 
 export interface Social extends SanityBody {
     _type: "socials";
