@@ -24,7 +24,7 @@ const ContactMe = (props: Props) => {
   return (
     <div className="relative mx-auto flex h-screen w-screen max-w-7xl flex-col items-center justify-evenly px-4 text-center md:w-full md:flex-row md:px-10 md:text-left">
       <h3 className="absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24">
-        ContacMe
+        Contact Me
       </h3>
 
       <div className="flex flex-col space-y-5 md:w-full">
@@ -37,15 +37,15 @@ const ContactMe = (props: Props) => {
 
         <div className="space-y-5">
           <div className="flex items-center justify-center space-x-5">
-            <PhoneIcon className="h-7 w-7 animate-pulse" />
+            <PhoneIcon className="h-7 w-7 animate-pulse text-blue-500" />
             <p>+17327924341</p>
           </div>
           <div className="flex items-center justify-center space-x-5">
-            <EnvelopeIcon className="h-7 w-7 animate-pulse" />
+            <EnvelopeIcon className="h-7 w-7 animate-pulse text-blue-500" />
             <p>mustpe@gmail.com</p>
           </div>
           <div className="flex items-center justify-center space-x-5">
-            <MapPinIcon className="h-7 w-7 animate-pulse" />
+            <MapPinIcon className="h-7 w-7 animate-pulse text-blue-500" />
             <p>Taoyuan, Taiwan</p>
           </div>
         </div>
