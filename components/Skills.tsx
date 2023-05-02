@@ -12,7 +12,7 @@ const Skills = (props: Props) => {
       transition={{ duration: 1 }}
       className="md:test-left max-w-2000px relative mx-auto flex h-screen min-h-screen flex-col items-center justify-center text-center xl:flex-row xl:px-10"
     >
-      <h3 className="absolute top-24 text-2xl uppercase tracking-[20px] text-gray-500">
+      <h3 className="absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24">
         Skills
         <p className="mt-4 text-sm tracking-[3px]">
           Hover over a skill for currency proficiency
