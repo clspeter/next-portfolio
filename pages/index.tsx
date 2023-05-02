@@ -19,16 +19,12 @@ export default function Home() {
       </Head>
 
       <Header />
-
-      <section id="hero" className="snap-start">
+      <section id="hero" className="snap-center">
         <Hero />
       </section>
-
-      {/* About  */}
       <section id="about" className="snap-center">
         <About />
       </section>
-      {/* Experience  */}
       <section id="experience" className="snap-center">
         <Experience />
       </section>
@@ -38,7 +34,7 @@ export default function Home() {
       <section id="projects" className="snap-center">
         <Projects />
       </section>
-      <section id="projects" className="snap-center">
+      <section id="contactme" className="snap-center">
         <ContactMe />
       </section>
     </div>
