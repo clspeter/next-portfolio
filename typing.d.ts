@@ -16,6 +16,7 @@ export interface PageInfo extends SanityBody {
     role: string;
     heroImage: Image;
     socials: Social[];
+    typeWriter: string[];
 }
 export interface Technology extends SanityBody {
     _type: "skill";

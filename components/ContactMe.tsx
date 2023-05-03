@@ -1,8 +1,9 @@
 import React from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm } from "react-hook-form";
+import { PageInfo } from "@/typing";
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 type FormData = {
   name: string;
   email: string;
@@ -38,15 +39,15 @@ const ContactMe = (props: Props) => {
         <div className="space-y-5">
           <div className="flex items-center justify-center space-x-5">
             <PhoneIcon className="h-7 w-7 animate-pulse text-blue-500" />
-            <p>+17327924341</p>
+            <p>{props.pageInfo.phoneNumber}</p>
           </div>
           <div className="flex items-center justify-center space-x-5">
             <EnvelopeIcon className="h-7 w-7 animate-pulse text-blue-500" />
-            <p>mustpe@gmail.com</p>
+            <p>{props.pageInfo.email}</p>
           </div>
           <div className="flex items-center justify-center space-x-5">
             <MapPinIcon className="h-7 w-7 animate-pulse text-blue-500" />
-            <p>Taoyuan, Taiwan</p>
+            <p>{props.pageInfo.address}</p>
           </div>
         </div>
         <form

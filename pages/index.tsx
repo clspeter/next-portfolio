@@ -41,10 +41,10 @@ export default function Home({
 
       <Header socials={socials} />
       <section id="hero" className="snap-center">
-        <Hero />
+        <Hero pageInfo={pageInfo} />
       </section>
       <section id="about" className="snap-center">
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
       <section id="experience" className="snap-center">
         <WrokExperience />
@@ -56,7 +56,7 @@ export default function Home({
         <Projects />
       </section>
       <section id="contact" className="snap-center">
-        <ContactMe />
+        <ContactMe pageInfo={pageInfo} />
       </section>
     </div>
   );

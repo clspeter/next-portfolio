@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../typing";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 
-function About({}: Props) {
+function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -25,20 +27,14 @@ function About({}: Props) {
         }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        src="/peter_lg.jpg"
+        src={urlFor(pageInfo?.profilePic).url()}
         className="h-48 w-48 flex-shrink-0 rounded-full object-cover md:mb-0 md:h-80 md:w-80 md:rounded-lg xl:h-[500px] xl:w-[500px]"
       />
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
           Here is a little bit about me.
         </h4>
-        <p className="mt-4 text-sm">
-          Passionate about seeking new knowledge and always following the latest
-          information technology, I enjoy using various software tools to solve
-          problems in both life and work. I have a strong inner drive of an
-          engineer and started self-learning front-end/App technology in
-          September 2022, officially entering the world of software engineering.
-        </p>
+        <p className="mt-4 text-sm">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );
