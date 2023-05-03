@@ -39,7 +39,7 @@ export default function Home({
         <title>Peter&apos;s Portfolio</title>
       </Head>
 
-      <Header />
+      <Header socials={socials} />
       <section id="hero" className="snap-center">
         <Hero />
       </section>

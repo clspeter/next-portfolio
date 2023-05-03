@@ -2,8 +2,9 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Social } from "../typing";
 
-type Props = {};
+type Props = { socials: Social[] };
 
 const Header = (props: Props) => {
   return (

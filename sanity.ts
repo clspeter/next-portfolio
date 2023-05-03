@@ -2,8 +2,12 @@ import { createClient } from 'next-sanity'
 import createImageUrlBuilder from '@sanity/image-url'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
 const apiVersion = "2021-03-25"
+const useCdn = process.env.NODE_ENV === 'production'
+
+
+const sanityConfig = { projectId, dataset, apiVersion, useCdn }
 
 export const sanityClient = createClient({
     projectId,
@@ -12,5 +16,5 @@ export const sanityClient = createClient({
     useCdn: true, // if you're using ISR or only static generation at build time then you can set this to `false` to guarantee no stale content
 })
 
-export const urlFor = (source: string) => createImageUrlBuilder(sanityClient).image(source)
+export const urlFor = (source: any) => createImageUrlBuilder(sanityConfig).image(source)
 
