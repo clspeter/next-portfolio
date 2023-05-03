@@ -3,7 +3,7 @@ import { groq } from 'next-sanity'
 import { sanityClient } from '../../sanity'
 import { Social } from "@/typing";
 
-const query = groq`*[_type == "socials"]`
+const query = groq`*[_type == "social"]`
 
 type Data = {
     socials: Social[]
