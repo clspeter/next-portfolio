@@ -24,31 +24,14 @@ const Header = (props: Props) => {
           duration: 1.5,
         }}
       >
-        <SocialIcon
-          fgColor="gray"
-          bgColor="transparent"
-          url="https://github.com/clspeter"
-        />
-        <SocialIcon
-          fgColor="gray"
-          bgColor="transparent"
-          url="https://www.instagram.com/mustpeter/"
-        />
-        <SocialIcon
-          fgColor="gray"
-          bgColor="transparent"
-          url="https://www.youtube.com/@peterliu4555"
-        />
-        <SocialIcon
-          fgColor="gray"
-          bgColor="transparent"
-          url="https://www.linkedin.com/in/peter-liu-1139799a/"
-        />
-        <SocialIcon
-          fgColor="gray"
-          bgColor="transparent"
-          url="https://www.cakeresume.com/s--a0mLUGey1QRVWAet4DHZxw--/peter-liu-aeeca7"
-        />
+        {props.socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            fgColor="gray"
+            bgColor="transparent"
+            url={social.url}
+          />
+        ))}
       </motion.div>
       <motion.div
         initial={{
