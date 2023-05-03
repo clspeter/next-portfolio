@@ -50,34 +50,34 @@ const Header = (props: Props) => {
           url="https://www.cakeresume.com/s--a0mLUGey1QRVWAet4DHZxw--/peter-liu-aeeca7"
         />
       </motion.div>
-      <Link href="#contact">
-        <motion.div
-          initial={{
-            y: -75,
-            opacity: 0,
-            scale: 1.5,
-          }}
-          animate={{
-            y: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{
-            duration: 1.5,
-          }}
-          className="flex flex-row items-center"
-        >
-          <SocialIcon
-            fgColor="gray"
-            bgColor="transparent"
-            className="cursor-pointer"
-            url="mailto:mustpe@gmail.com"
-          />
+      <motion.div
+        initial={{
+          y: -75,
+          opacity: 0,
+          scale: 1.5,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1.5,
+        }}
+        className="flex flex-row items-center"
+      >
+        <SocialIcon
+          fgColor="gray"
+          bgColor="transparent"
+          className="cursor-pointer"
+          url="mailto:mustpe@gmail.com"
+        />
+        <Link href="#contact">
           <div className="hidden text-center text-gray-400 sm:block">
             GET INTOUCH
           </div>
-        </motion.div>
-      </Link>
+        </Link>
+      </motion.div>
     </header>
   );
 };
