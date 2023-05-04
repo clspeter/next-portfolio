@@ -1,12 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Project } from "@/typing";
+import { urlFor } from "@/sanity";
 
-type Props = {};
+type Props = { projects: Project[] };
 
-const Projects = (props: Props) => {
-  const projects = [1, 2, 3, 4, 5];
+const Projects = ({ projects }: Props) => {
   return (
-    <div className="relative mx-auto flex h-screen max-w-full flex-col items-center justify-evenly overflow-hidden text-left md:flex-row">
+    <div className="relative mx-auto flex h-screen w-screen flex-col items-center justify-evenly overflow-hidden text-left md:flex-row">
       <h3 className="absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24">
         Projects
       </h3>
@@ -15,7 +16,7 @@ const Projects = (props: Props) => {
         {projects.map((project, i) => (
           <div
             className="items-cneter flex max-h-screen w-screen flex-shrink-0 snap-center flex-col justify-center space-y-5 p-10 md:p-44"
-            key={i}
+            key={project._id}
           >
             <motion.img
               initial={{ opacity: 0, y: -300 }}
@@ -23,19 +24,13 @@ const Projects = (props: Props) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="w-fit self-center md:h-96"
-              src="/train.png"
+              src={urlFor(project.image).url()}
             />
-            <div>
-              <h4>
-                Train Schedule App {i + 1} of {projects.length}
+            <div className="flex flex-col items-center space-y-4">
+              <h4 className="text-center text-3xl font-bold">
+                {project.title}
               </h4>
-              <p>
-                Going by a range of names, including “Product Tour” and
-                “Tutorial”, you’ve definitely seen these in 95% of the apps you
-                have downloaded. Right after the splash screen, you’ll be
-                presented with a series of screens which tell you what the app
-                does, and how you can do it. The vast majority take the form of
-              </p>
+              <p className="max-w-5xl text-center">{project.description}</p>
             </div>
           </div>
         ))}

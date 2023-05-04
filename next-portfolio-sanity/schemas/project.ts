@@ -18,8 +18,8 @@ export default {
             }
         },
         {
-            name: 'sumary',
-            title: 'Sumary',
+            name: 'description',
+            title: 'Description',
             type: 'text',
         },
         {

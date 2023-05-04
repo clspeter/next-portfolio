@@ -53,7 +53,7 @@ export default function Home({
         <Skills skills={skills} />
       </section>
       <section id="projects" className="snap-center">
-        <Projects />
+        <Projects projects={projects} />
       </section>
       <section id="contact" className="snap-center">
         <ContactMe pageInfo={pageInfo} />
