@@ -8,7 +8,7 @@ type Props = { socials: Social[] };
 
 const Header = (props: Props) => {
   return (
-    <header className="sticky top-0 z-20 mx-auto flex flex-row justify-between p-5 md:max-w-7xl xl:items-center">
+    <header className="sticky top-0 z-20 mx-auto flex flex-row justify-between p-2 md:max-w-7xl md:p-5 xl:items-center">
       <motion.div
         initial={{
           y: -75,

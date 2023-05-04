@@ -11,7 +11,7 @@ const ExperienceCard = (props: Props) => {
     month: "long",
   };
   return (
-    <article className="flex w-[390px] flex-shrink-0 snap-center flex-col items-center gap-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[600px] xl:w-[900px]">
+    <article className="z-10 flex w-[390px] flex-shrink-0 snap-center flex-col items-center gap-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 focus:opacity-100 hover:opacity-100 md:w-[600px] xl:w-[900px]">
       <motion.img
         initial={{
           y: -100,
@@ -27,8 +27,12 @@ const ExperienceCard = (props: Props) => {
       />
 
       <div className="md:px-1- px-0">
-        <h4 className="text-4xl font-light">{props.experience.jobTitle}</h4>
-        <p className="mt-1 text-2xl font-bold">{props.experience.company}</p>
+        <h4 className="text-xl font-light md:text-4xl">
+          {props.experience.jobTitle}
+        </h4>
+        <p className="mt-1 text-lg font-bold md:text-2xl">
+          {props.experience.company}
+        </p>
         <div className="my-2 flex gap-2">
           {props.experience.technologies.map((technology) => (
             <img
@@ -55,7 +59,7 @@ const ExperienceCard = (props: Props) => {
                 }
               )}
         </p>
-        <ul className="ml-5 list-disc gap-4 text-lg">
+        <ul className="text-sx ml-5 list-disc gap-4 md:text-lg">
           {props.experience?.points.map((point) => (
             <li key={point.slice(5)}>{point}</li>
           ))}
