@@ -50,7 +50,7 @@ export default function Home({
         <WrokExperience experiences={experiences} />
       </section>
       <section id="skills" className="snap-center">
-        <Skills />
+        <Skills skills={skills} />
       </section>
       <section id="projects" className="snap-center">
         <Projects />
