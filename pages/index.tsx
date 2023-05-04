@@ -67,7 +67,7 @@ export default function Home({
   );
 }
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfoQuery = groq`*[_type == "pageInfo"][0]`;
   const experienceQuery = groq`*[_type == "experience"]{
     ...,
@@ -94,5 +94,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
       skills,
       socials,
     },
+    revalidate: 60,
   };
 };
