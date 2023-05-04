@@ -15,6 +15,9 @@ import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchSocials } from "@/utils/fetchSocials";
 import { fetchSkills } from "@/utils/fetchSkills";
 import { GetServerSideProps, GetStaticProps, NextPage } from "next";
+import { groq } from "next-sanity";
+import { sanityClient } from "@/sanity";
+import experience from "@/next-portfolio-sanity/schemas/experience";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,10 +36,12 @@ export default function Home({
   skills,
   socials,
 }: Props) {
+  const title = `${pageInfo?.name}'s Portfolio`;
+
   return (
     <div className="z-0 h-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-blue-500">
       <Head>
-        <title>{pageInfo?.name}apos;s Portfolio</title>
+        <title>{title}</title>
       </Head>
 
       <Header socials={socials} />
@@ -63,11 +68,24 @@ export default function Home({
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const experiences: Experience[] = await fetchExperience();
-  const projects: Project[] = await fetchProjects();
-  const skills: Skill[] = await fetchSkills();
-  const socials: Social[] = await fetchSocials();
+  const pageInfoQuery = groq`*[_type == "pageInfo"][0]`;
+  const experienceQuery = groq`*[_type == "experience"]{
+    ...,
+    technologies[]->
+} | order(dateStarted desc)`;
+  const projectQuery = groq`*[_type == "project"] {
+    ...,
+    technologies[]->
+}`;
+  const skillQuery = groq`*[_type == "skill"]`;
+  const socialQuery = groq`*[_type == "social"]`;
+
+  const pageInfo: PageInfo = await sanityClient.fetch(pageInfoQuery);
+  const experiences: Experience[] = await sanityClient.fetch(experienceQuery);
+  const projects: Project[] = await sanityClient.fetch(projectQuery);
+  const skills: Skill[] = await sanityClient.fetch(skillQuery);
+  const socials: Social[] = await sanityClient.fetch(socialQuery);
+
   return {
     props: {
       pageInfo,
@@ -76,6 +94,5 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
       skills,
       socials,
     },
-    revalidate: 10,
   };
 };
