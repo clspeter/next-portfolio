@@ -5,8 +5,8 @@ import { Experience } from "@/typing";
 
 const query = groq`*[_type == "experience"]{
     ...,
-    Technologies[]->
-}`
+    technologies[]->
+} | order(dateStarted desc)`
 
 type Data = {
     experience: Experience;

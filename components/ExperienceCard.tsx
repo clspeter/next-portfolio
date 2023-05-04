@@ -1,9 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Experience } from "@/typing";
+import { urlFor } from "@/sanity";
 
-type Props = {};
+type Props = { experience: Experience };
 
 const ExperienceCard = (props: Props) => {
+  const dateStringOptions: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+  };
   return (
     <article className="flex w-[390px] flex-shrink-0 snap-center flex-col items-center gap-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[600px] xl:w-[900px]">
       <motion.img
@@ -16,25 +22,43 @@ const ExperienceCard = (props: Props) => {
         }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        src="/vercel.png"
+        src={urlFor(props.experience?.companyImage).url()}
         className="h-32 w-32 rounded-full object-cover object-center xl:h-[200px] xl:w-[200px]"
       />
 
       <div className="md:px-1- px-0">
-        <h4 className="text-4xl font-light">CEO of X-Corp</h4>
-        <p className="mt-1 text-2xl font-bold">X-Corp</p>
+        <h4 className="text-4xl font-light">{props.experience.jobTitle}</h4>
+        <p className="mt-1 text-2xl font-bold">{props.experience.company}</p>
         <div className="my-2 flex gap-2">
-          <img className="full h-10 w-10 rounded" src="/js.png" alt="" />
-          <img className="full h-10 w-10 rounded" src="/js.png" alt="" />
-          <img className="full h-10 w-10 rounded" src="/js.png" alt="" />
+          {props.experience.technologies.map((technology) => (
+            <img
+              key={technology._id}
+              className="full h-10 w-10 rounded-full"
+              src={urlFor(technology.image).url()}
+              alt={technology.title}
+            />
+          ))}
         </div>
-        <p>2020-2021</p>
+        <p>
+          {new Date(props.experience.dateStarted).toLocaleDateString(
+            undefined,
+            dateStringOptions
+          )}{" "}
+          -{" "}
+          {props.experience.isCurrentlyWorkingHere
+            ? "Now"
+            : new Date(props.experience.dateEnded).toLocaleDateString(
+                undefined,
+                {
+                  year: "numeric",
+                  month: "long",
+                }
+              )}
+        </p>
         <ul className="ml-5 list-disc gap-4 text-lg">
-          <li>item 1 Butoon bullen cappti book apple beat boat</li>
-          <li>item 2</li>
-          <li>item 3</li>
-          <li>item 3</li>
-          <li>item 3</li>
+          {props.experience?.points.map((point) => (
+            <li key={point.slice(5)}>{point}</li>
+          ))}
         </ul>
       </div>
     </article>

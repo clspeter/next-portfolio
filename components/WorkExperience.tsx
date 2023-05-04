@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
+import { Experience } from "@/typing";
+import experience from "@/next-portfolio-sanity/schemas/experience";
 
-type Props = {};
+type Props = { experiences: Experience[] };
 
 const Experience = (props: Props) => {
   return (
@@ -17,11 +19,9 @@ const Experience = (props: Props) => {
       </h3>
 
       <div className="flex w-full snap-x snap-mandatory space-x-5 overflow-x-scroll p-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-blue-500 md:p-10">
-        <ExperienceCard />
-        <ExperienceCard />
-        <ExperienceCard />
-        <ExperienceCard />
-        <ExperienceCard />
+        {props.experiences.map((experience) => (
+          <ExperienceCard key={experience._id} experience={experience} />
+        ))}
       </div>
     </motion.div>
   );

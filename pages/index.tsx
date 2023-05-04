@@ -47,7 +47,7 @@ export default function Home({
         <About pageInfo={pageInfo} />
       </section>
       <section id="experience" className="snap-center">
-        <WrokExperience />
+        <WrokExperience experiences={experiences} />
       </section>
       <section id="skills" className="snap-center">
         <Skills />
