@@ -1,6 +1,6 @@
 export default {
-    name: 'experince',
-    title: 'Experince',
+    name: 'experience',
+    title: 'Experience',
     type: 'document',
     fields: [
         {
@@ -19,16 +19,16 @@ export default {
         {
             name: 'company',
             title: 'Company',
-            type: 'text',
+            type: 'string',
         },
         {
             name: 'dateStarted',
-            title: 'DateStarted',
+            title: 'Date Started',
             type: 'date',
         },
         {
-            name: 'dataEnded',
-            title: 'DateEnded',
+            name: 'dateEnded',
+            title: 'Date Ended',
             type: 'date',
         },
         {
@@ -37,9 +37,12 @@ export default {
             type: 'boolean',
         },
         {
-            name: 'techonologies',
-            title: 'Techonologies',
-            type: 'boolean',
+            name: 'technologies',
+            title: 'Technologies',
+            type: 'array',
+            of: [
+                { type: "reference", to: { type: "skill" } }
+            ]
         },
         {
             name: 'points',
