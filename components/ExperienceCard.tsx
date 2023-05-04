@@ -11,7 +11,7 @@ const ExperienceCard = (props: Props) => {
     month: "long",
   };
   return (
-    <article className="z-10 flex w-[390px] flex-shrink-0 snap-center flex-col items-center gap-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 focus:opacity-100 hover:opacity-100 md:w-[600px] xl:w-[900px]">
+    <article className="z-10 flex w-[390px] flex-shrink-0 snap-center flex-col items-center gap-7 overflow-hidden rounded-lg bg-[#292929] p-10 transition-opacity duration-200 focus:opacity-100 hover:opacity-100 md:w-[600px] md:opacity-40 xl:w-[900px]">
       <motion.img
         initial={{
           y: -100,
@@ -30,18 +30,20 @@ const ExperienceCard = (props: Props) => {
         <h4 className="text-xl font-light md:text-4xl">
           {props.experience.jobTitle}
         </h4>
-        <p className="mt-1 text-lg font-bold md:text-2xl">
-          {props.experience.company}
-        </p>
-        <div className="my-2 flex gap-2">
-          {props.experience.technologies.map((technology) => (
-            <img
-              key={technology._id}
-              className="full h-10 w-10 rounded-full"
-              src={urlFor(technology.image).url()}
-              alt={technology.title}
-            />
-          ))}
+        <div className="flex flex-row items-start space-x-4 md:flex-col md:items-start">
+          <p className="mt-1 text-lg font-bold md:text-2xl">
+            {props.experience.company}
+          </p>
+          <div className="my-2 flex flex-row space-x-2 md:space-x-4">
+            {props.experience.technologies.map((technology) => (
+              <img
+                key={technology._id}
+                className="full h-10 w-10 rounded-full"
+                src={urlFor(technology.image).url()}
+                alt={technology.title}
+              />
+            ))}
+          </div>
         </div>
         <p>
           {new Date(props.experience.dateStarted).toLocaleDateString(

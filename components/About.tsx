@@ -13,7 +13,7 @@ function About({ pageInfo }: Props) {
       transition={{ duration: 1.5 }}
       className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-center gap-20 px-10 text-center md:flex-row md:text-left"
     >
-      <h3 className="absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24">
+      <h3 className="absolute top-14 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24">
         About
       </h3>
 

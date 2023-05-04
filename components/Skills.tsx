@@ -28,7 +28,7 @@ const Skills = (props: Props) => {
           <SkillCard
             key={skill._id}
             skill={skill}
-            directionTop={i > 8 ? false : true}
+            directionTop={i > 7 ? false : true}
             setHoverSkill={setHoverSkill}
           />
         ))}

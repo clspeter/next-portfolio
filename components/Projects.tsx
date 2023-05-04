@@ -8,14 +8,14 @@ type Props = { projects: Project[] };
 const Projects = ({ projects }: Props) => {
   return (
     <div className="relative mx-auto flex h-screen w-screen flex-col items-center justify-evenly overflow-hidden text-left md:flex-row">
-      <h3 className="absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24">
+      <h3 className="absolute top-14 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24">
         Projects
       </h3>
 
       <div className="relative z-20 mt-4 flex w-full snap-x snap-mandatory overflow-y-hidden overflow-x-scroll scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-blue-500">
         {projects.map((project, i) => (
           <div
-            className="items-cneter flex max-h-screen w-screen flex-shrink-0 snap-center flex-col justify-center space-y-5 p-10 md:p-44"
+            className="items-cneter flex max-h-screen w-screen flex-shrink-0 snap-center flex-col justify-center space-y-5 p-3 md:p-44"
             key={project._id}
           >
             <motion.img

@@ -18,13 +18,13 @@ const Skill = ({ directionTop, skill, setHoverSkill }: Props) => {
     >
       <motion.img
         initial={{
-          y: directionTop ? -200 : 200,
-          opacity: 0,
+          x: !directionTop ? -100 : 100,
+          opacity: 0.5,
         }}
         transition={{
           duration: 1,
         }}
-        whileInView={{ y: 0, opacity: 1 }}
+        whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
         src={urlFor(skill.image).url()}
         className=" h-24 w-24 rounded-full border border-gray-500 object-fill filter transition duration-200 ease-in-out group-hover:grayscale xl:h-32 xl:w-32"
