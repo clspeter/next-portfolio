@@ -20,7 +20,7 @@ const Skills = (props: Props) => {
       </h3>
 
       <div className="mb-5 text-xl text-gray-500 md:basis-1/2">
-        {hoverSkill?.title || "Hover over a skill for currency proficiency"}
+        {hoverSkill?.title || "Hover over a skill for current proficiency"}
       </div>
 
       <div className="grid grid-cols-3 gap-5 md:basis-1/2 md:grid-cols-4">
