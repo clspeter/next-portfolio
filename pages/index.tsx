@@ -36,7 +36,7 @@ export default function Home({
   return (
     <div className="z-0 h-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-blue-500">
       <Head>
-        <title>Peter&apos;s Portfolio</title>
+        <title>{pageInfo?.name}apos;s Portfolio</title>
       </Head>
 
       <Header socials={socials} />
