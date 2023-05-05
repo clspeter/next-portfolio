@@ -5,12 +5,16 @@ This is a website that is fully responsive and showcases my portfolio with anima
 ## Technologies
 
 Next.js : main framework 
+
 Sanity.io : backend data handle
+
 Framer Motion : smooth and unique animation
+
 Tailwind CSS : responsive modern website
+
 Vercel : easy and fast deploy
 
-### [Host on Vercel.com](https://next-portfolio-clspeter.vercel.app/)
+### Host on [Vercel.com](https://next-portfolio-clspeter.vercel.app/)
 
 ## Credit
 
