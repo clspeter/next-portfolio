@@ -1,6 +1,6 @@
 # next-protfolio
 
-This is a website that is fully responsive and showcases my portfolio with animations.
+This is a website that fully responsive and animated which can showcases my portfolio.
 
 All the infomation store in sanity.io which can be easy management.
 
