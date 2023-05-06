@@ -2,6 +2,10 @@
 
 This is a website that is fully responsive and showcases my portfolio with animations.
 
+All the infomation store in sanity.io which can be easy management.
+
+Infomation will update to website in 1 minute after publish since I use getStatsicProps and set revalidate to 1 minute.
+
 ## Technologies
 
 Next.js : main framework 
