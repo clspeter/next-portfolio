@@ -1,6 +1,6 @@
 # next-protfolio
 
-This is a morden technology style website that fully responsive and animated which can showcases enginner's portfolio.
+This is a modern technology style website that fully responsive and animated which can showcases enginner's portfolio.
 
 All the infomation store in sanity.io which can be easy management.
 
