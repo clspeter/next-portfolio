@@ -26,8 +26,8 @@ const Skills = (props: Props) => {
         Skills
       </h3>
 
-      <div className="mb-5 text-xl text-gray-500 md:basis-1/2">
-        {hoverSkill?.title || `${isTouchDevice ? 'Tap' : 'Hover'} on a skill to learn more about it`}
+      <div className={`mb-5 text-xl md:basis-1/2 ${hoverSkill?.title ? 'text-white-500' : 'text-gray-500'}`}>
+        {hoverSkill?.title || `${isTouchDevice ? 'Tap' : 'Hover'} on a skill for current proficiency`}
       </div>
 
       <div className="grid grid-cols-3 gap-5 md:basis-1/2 md:grid-cols-4">
@@ -40,7 +40,7 @@ const Skills = (props: Props) => {
           />
         ))}
       </div>
-    </motion.div>
+    </motion.div >
   );
 };
 
