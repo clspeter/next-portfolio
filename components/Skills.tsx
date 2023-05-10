@@ -2,11 +2,18 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import SkillCard from "./Skill";
 import { Skill } from "@/typing";
+import { isMobile } from 'react-device-detect';
 
 type Props = { skills: Skill[] };
 
 const Skills = (props: Props) => {
   const [hoverSkill, setHoverSkill] = React.useState<Skill | null>(null);
+  const [isTouchDevice, setIsTouchDevice] = React.useState<boolean>(false);
+
+  useEffect(() => {
+    if (isMobile)
+      setIsTouchDevice(true);
+  }, []);
 
   return (
     <motion.div
@@ -20,7 +27,7 @@ const Skills = (props: Props) => {
       </h3>
 
       <div className="mb-5 text-xl text-gray-500 md:basis-1/2">
-        {hoverSkill?.title || "Hover over a skill for current proficiency"}
+        {hoverSkill?.title || `${isTouchDevice ? 'Tap' : 'Hover'} on a skill to learn more about it`}
       </div>
 
       <div className="grid grid-cols-3 gap-5 md:basis-1/2 md:grid-cols-4">
