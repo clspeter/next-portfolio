@@ -35,7 +35,7 @@ const ExperienceCard = (props: Props) => {
             {props.experience.company}
           </p>
           <div className="my-2 flex flex-row space-x-2 md:space-x-4">
-            {props.experience.technologies.map((technology) => (
+            {props.experience.technologies?.map((technology) => (
               <img
                 key={technology._id}
                 className="full h-10 w-10 rounded-full"
@@ -54,12 +54,12 @@ const ExperienceCard = (props: Props) => {
           {props.experience.isCurrentlyWorkingHere
             ? "Now"
             : new Date(props.experience.dateEnded).toLocaleDateString(
-                undefined,
-                {
-                  year: "numeric",
-                  month: "long",
-                }
-              )}
+              undefined,
+              {
+                year: "numeric",
+                month: "long",
+              }
+            )}
         </p>
         <ul className="text-sx ml-5 list-disc gap-4 md:text-lg">
           {props.experience?.points.map((point) => (
