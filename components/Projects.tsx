@@ -23,7 +23,7 @@ const Projects = ({ projects }: Props) => {
               transition={{ duration: 2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="w-fit self-center md:h-96"
+              className="w-auto self-center md:h-96"
               src={urlFor(project.image).url()}
             />
             <div className="flex flex-col items-center space-y-4">
