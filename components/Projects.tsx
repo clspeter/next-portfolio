@@ -19,11 +19,11 @@ const Projects = ({ projects }: Props) => {
             key={project._id}
           >
             <motion.img
-              initial={{ opacity: 0, y: -300 }}
+              initial={{ opacity: 0, y: -200 }}
               transition={{ duration: 2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="w-auto self-center md:h-96"
+              className="w-auto self-center h-64 md:h-96"
               src={urlFor(project.image).url()}
             />
             <div className="flex flex-col items-center space-y-4">

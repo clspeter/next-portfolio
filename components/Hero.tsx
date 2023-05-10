@@ -33,7 +33,7 @@ function Hero({ pageInfo }: Props) {
           <span>{text}</span>
           <Cursor cursorColor="#4299E1" />
         </h1>
-        <div className="grid w-fit grid-cols-2 justify-center gap-2 self-center pt-5 md:grid-cols-4">
+        <div className="grid w-fit grid-cols-2 justify-center gap-2 self-center pt-16 md:pt-5 md:grid-cols-4">
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>
