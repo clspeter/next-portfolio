@@ -1,7 +1,9 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Project } from "@/typing";
-import { urlFor } from "@/sanity";
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import React from 'react';
+
+import { urlFor } from '@/sanity';
+import { Project } from '@/typing';
 
 type Props = { projects: Project[] };
 
@@ -18,14 +20,18 @@ const Projects = ({ projects }: Props) => {
             className="items-cneter flex max-h-screen w-screen flex-shrink-0 snap-center flex-col justify-center space-y-5 p-3 md:p-44"
             key={project._id}
           >
-            <motion.img
-              initial={{ opacity: 0, y: -200 }}
-              transition={{ duration: 2 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="w-auto self-center h-64 md:h-96"
-              src={urlFor(project.image).url()}
-            />
+            <div className="self-center">
+              <Link href={project.linkToBuild} >
+                <motion.img
+                  initial={{ opacity: 0, y: -200 }}
+                  transition={{ duration: 2 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  src={urlFor(project.image).url()}
+                  className="w-auto self-center h-64 md:h-96"
+                />
+              </Link>
+            </div>
             <div className="flex flex-col items-center space-y-4">
               <h4 className="text-center text-3xl font-bold">
                 {project.title}
